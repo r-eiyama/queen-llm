@@ -1,0 +1,10 @@
+version: '3'
+tasks:
+  up:
+    desc: Start the langchain container
+    cmds:
+      - docker-compose up
+  down:
+    desc: Stop the langchain container
+    cmds:
+      - docker-compose down
