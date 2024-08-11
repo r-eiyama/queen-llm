@@ -1,5 +1,9 @@
 version: '3'
 tasks:
+  local-build:
+    desc: Build the local python environment
+    cmds:
+      - pip install -r requirements.txt
   build:
     desc: Build the langchain container
     cmds:
