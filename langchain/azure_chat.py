@@ -1,4 +1,5 @@
 from langchain_openai import AzureChatOpenAI
+from langchain.callbacks import get_openai_callback
 import config
 import os
 
@@ -13,10 +14,12 @@ model = AzureChatOpenAI(
     api_version=os.environ["AZURE_OPENAI_API_VERSION"],
 )
 
-message = "langchain難しいにゃ！"
+message = "人生とは何か？100文字以内でこの質問に答えてください。"
 
-res = model.invoke(message)
-
-print(res.content)
-
+with get_openai_callback() as cb:
+    res = model.invoke([message])
+    print(res.content)
+    print(
+        f"Total Cost (USD): ${format(cb.total_cost, '.6f')}"
+    )
 
