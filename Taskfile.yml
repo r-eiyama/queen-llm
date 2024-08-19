@@ -4,6 +4,11 @@ tasks:
     desc: Build the local python environment
     cmds:
       - pip install -r requirements.txt
+
+  local-run:
+    desc: Run the local streamlit app
+    cmds:
+      - streamlit run streamlit/first_app.py 
   build:
     desc: Build the langchain container
     cmds:

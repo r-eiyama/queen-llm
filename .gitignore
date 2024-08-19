@@ -1,3 +1,4 @@
 .env
 queen-llm.code-workspace
 langchain/__pycache__
+streamlit/__pycache__
